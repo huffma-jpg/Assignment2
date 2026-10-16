@@ -11,6 +11,7 @@ MONTHS_PER_YEAR = 9
 CLASS_DAYS_PER_SEMESTER = 75
 CS1430_CREDITS = 3
 CS1430_MEETINGS_PER_SEMESTER = 45
+WARHAMMER_COMBAT_PATROL = 177
 
 annual_cost = 0
 credits = 0
@@ -41,6 +42,9 @@ def cost_per_class(annual_cost, credits):
     """Give back what one 50-minute CS 1430 class meeting costs."""
     return ((annual_cost*CS1430_CREDITS)/(2*credits))/CS1430_MEETINGS_PER_SEMESTER
 
+def amount_of_combat(annual_cost):
+    return annual_cost/WARHAMMER_COMBAT_PATROL
+
 # ---- PROGRAM ----
 
 def main():
@@ -51,8 +55,10 @@ def main():
         print("1. Cost per semester")
         print("2. Cost per month")
         print("3. Cost per day")
-        print("4. cost per credit")
-        print('5. cost per class')
+        print("4. Cost per credit")
+        print('5. Cost per class')
+        print('6. Amount of combat patrols')
+        print('q. quit')
         
         choice = input("Choose an option: ")
     
@@ -68,6 +74,8 @@ def main():
             print(f"${cost_per_credit(annual_cost, credits):.2f}")
         elif choice == "5":
             print(f"${cost_per_class(annual_cost, credits):.2f}")
+        elif choice == "6":
+            print(f"${amount_of_combat(annual_cost):.2f}")
         else:
             break
 
