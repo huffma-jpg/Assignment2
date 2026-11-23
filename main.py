@@ -43,7 +43,7 @@ def cost_per_class(annual_cost, credits):
     return ((annual_cost*CS1430_CREDITS)/(2*credits))/CS1430_MEETINGS_PER_SEMESTER
 
 def amount_of_combat(annual_cost):
-    return annual_cost/WARHAMMER_COMBAT_PATROL
+    return annual_cost//WARHAMMER_COMBAT_PATROL
 
 # ---- PROGRAM ----
 
@@ -75,7 +75,7 @@ def main():
         elif choice == "5":
             print(f"${cost_per_class(annual_cost, credits):.2f}")
         elif choice == "6":
-            print(f"${amount_of_combat(annual_cost):.2f}")
+            print(f"{amount_of_combat(annual_cost)} combat patrols")
         else:
             break
 
